@@ -92,3 +92,7 @@ form.addEventListener('submit', async (e) => {
     form.reset();
   }, 3000);
 });
+import {createClient} from https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm
+const supabaseUrl = "https://dplbrolscjiyfemtdqmk.supabase.co/rest/v1/";
+const supabaseKey = "sb_publishable_s9vnKPQOf06ywI899ypFMw_Id2HmcU2";
+const supabase = createClient(supabaseUrl, supabaseKey);

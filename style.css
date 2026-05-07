@@ -394,14 +394,16 @@ html, body {
 }
 .policy-container{
   text-align: center;
-  max-width: 900px;
   margin: auto;
-  background:#1A1A2E;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 40%, rgba(192,57,43,0.08) 0%, transparent 70%),
+    var(--bg);
   padding: 50px;
   border-radius: 20px;
   box-shadow:0 8px 30px rgba(0,0,0,.10);
 }
 .policy-container h1{
+
  color:#E74C3C;
  margin-bottom:25px;
  padding: bottom 10px;
@@ -419,11 +421,11 @@ html, body {
 }
 .policy-container p{
   margin-bottom:15px;
-  color:#E74C3C;
+  color:#8A8FA8;
 }
 .policy-container ul{
-  margin-left:25px;
-  margin-bottom:20px;
+  margin: none;
+  list-style-type: none;
 }
 .policy-container li{
   margin-bottom:8px;
@@ -1337,3 +1339,28 @@ html, body {
   .cal-legend { padding: 8px 14px; gap: 10px; }
   .cal-add-btn span { display: none; }
 }
+.info-box {
+      background: var(--red-faint, rgba(192,57,43,0.07));
+      border: 1.5px solid rgba(192,57,43,0.2);
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+    .info-box .icon-wrap {
+      width: 56px; height: 56px;
+      background: rgba(192,57,43,0.1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      color: #C0392B;
+    }
+    .info-box .icon-wrap svg { width: 26px; height: 26px; }
+    .info-box p {
+      font-size: 0.92rem;
+      color: #1A1A2E;
+      line-height: 1.7;
+    }
+    .info-box p strong {
+      color: #C0392B;
+    }

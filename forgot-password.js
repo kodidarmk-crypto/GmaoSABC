@@ -2,7 +2,7 @@
 // Remplace ces deux valeurs par celles de ton projet Supabase
 const SUPABASE_URL = 'https://dplbrolscjiyfemtdqmk.supabase.co/rest/v1/';
 const SUPABASE_KEY = 'sb_publishable_s9vnKPQOf06ywI899ypFMw_Id2HmcU2';
-
+const redirectTo = window.location.origin + '/change-password.html';
 const { createClient } = supabase;
 const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
 

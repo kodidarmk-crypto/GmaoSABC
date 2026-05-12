@@ -1,6 +1,6 @@
 // ─── CONFIG SUPABASE ───────────────────────────────────────────────────────────
 // Remplace ces deux valeurs par celles de ton projet Supabase
-const SUPABASE_URL = 'https://dplbrolscjiyfemtdqmk.supabase.co/rest/v1/';
+const SUPABASE_URL = 'https://dplbrolscjiyfemtdqmk.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_s9vnKPQOf06ywI899ypFMw_Id2HmcU2';
 const redirectTo = window.location.origin + '/change-password.html';
 const { createClient } = supabase;
@@ -25,12 +25,12 @@ async function sendResetLink() {
 
   // Validation basique
   if (!email) {
-    showError('Veuillez entrer votre adresse e-mail.');
+    showError('Please enter your email address.');
     return;
   }
   const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRx.test(email)) {
-    showError('Adresse e-mail invalide.');
+    showError('Invalid email address.');
     return;
   }
 
@@ -54,9 +54,9 @@ async function sendResetLink() {
       // la config SMTP est manquante. On affiche un message générique pour ne
       // pas révéler si l'e-mail est enregistré (sécurité).
       if (error.message.toLowerCase().includes('user not found')) {
-        showError('Aucun compte trouvé avec cette adresse.');
+        showError('No account found with this address.');
       } else {
-        showError('Une erreur est survenue. Réessayez plus tard.');
+        showError('An error occurred. Please try again later.');
         console.error('Supabase resetPassword error:', error.message);
       }
       setLoading(false);
@@ -69,7 +69,7 @@ async function sendResetLink() {
     document.getElementById('step-confirm').style.display = 'block';
 
   } catch (err) {
-    showError('Erreur réseau. Vérifiez votre connexion.');
+    showError('Network error. Please check your connection.');
     console.error(err);
     setLoading(false);
   }

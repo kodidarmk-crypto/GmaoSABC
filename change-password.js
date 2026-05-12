@@ -1,6 +1,6 @@
 // ─── CONFIG SUPABASE ───────────────────────────────────────────────────────────
 // Mêmes valeurs que dans forgot-password.js
-const SUPABASE_URL = 'https://dplbrolscjiyfemtdqmk.supabase.co/rest/v1/';
+const SUPABASE_URL = 'https://dplbrolscjiyfemtdqmk.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_s9vnKPQOf06ywI899ypFMw_Id2HmcU2';
 
 const { createClient } = supabase;
@@ -78,11 +78,11 @@ function onPwInput() {
   const label = document.getElementById('strength-label');
 
   const levels = [
-    { pct: '10%', color: '#E74C3C', text: 'Très faible' },
-    { pct: '25%', color: '#E74C3C', text: 'Faible'      },
-    { pct: '50%', color: '#F39C12', text: 'Moyen'        },
-    { pct: '75%', color: '#2980B9', text: 'Fort'         },
-    { pct: '90%', color: '#27AE60', text: 'Très fort'    },
+    { pct: '10%', color: '#E74C3C', text: 'Very low' },
+    { pct: '25%', color: '#E74C3C', text: 'Low'      },
+    { pct: '50%', color: '#F39C12', text: 'Medium'        },
+    { pct: '75%', color: '#2980B9', text: 'High'         },
+    { pct: '90%', color: '#27AE60', text: 'Very high'    },
     { pct: '100%',color: '#1E8449', text: 'Excellent'    },
   ];
 
@@ -106,17 +106,17 @@ async function changePassword() {
 
   // Validations
   if (!pw) {
-    document.getElementById('pw-error').textContent = 'Entrez un nouveau mot de passe.';
+    document.getElementById('pw-error').textContent = 'Enter a new password.';
     document.getElementById('new-password').classList.add('error');
     return;
   }
   if (pw.length < 8) {
-    document.getElementById('pw-error').textContent = 'Minimum 8 caractères.';
+    document.getElementById('pw-error').textContent = 'Minimum 8 characters.';
     document.getElementById('new-password').classList.add('error');
     return;
   }
   if (pw !== confirm) {
-    document.getElementById('confirm-error').textContent = 'Les mots de passe ne correspondent pas.';
+    document.getElementById('confirm-error').textContent = 'Passwords do not match.';
     document.getElementById('confirm-password').classList.add('error');
     return;
   }
@@ -131,7 +131,7 @@ async function changePassword() {
 
     if (error) {
       document.getElementById('pw-error').textContent =
-        'Erreur : ' + (error.message || 'impossible de changer le mot de passe.');
+        'Erreur : ' + (error.message || 'Unable to change password.');
       document.getElementById('new-password').classList.add('error');
       document.getElementById('btn-change-label').style.display   = 'inline';
       document.getElementById('btn-change-spinner').style.display = 'none';
@@ -156,7 +156,7 @@ async function changePassword() {
     }, 1000);
 
   } catch (err) {
-    document.getElementById('pw-error').textContent = 'Erreur réseau. Réessayez.';
+    document.getElementById('pw-error').textContent = 'Network error. Please check your connection.';
     console.error(err);
     document.getElementById('btn-change-label').style.display   = 'inline';
     document.getElementById('btn-change-spinner').style.display = 'none';
